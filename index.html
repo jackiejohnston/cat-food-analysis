@@ -41,31 +41,31 @@
               <div class="form-group">
                 <label for="protein" class="col-sm-10 control-label">Minimum Crude Protein Percentage</label>
                 <div class="col-sm-2">
-                  <input id="protein" type="number">
+                  <input id="protein" type="number" class="form-control">
                 </div>
               </div>
               <div class="form-group">
                 <label for="fat" class="col-sm-10 control-label">Minimum Crude Fat Percentage</label>
                 <div class="col-sm-2">
-                  <input id="fat" type="number">
+                  <input id="fat" type="number" class="form-control">
                 </div>
               </div>
               <div class="form-group">
                 <label for="fiber" class="col-sm-10 control-label">Maximum Crude Fiber Percentage</label>
                 <div class="col-sm-2">
-                  <input id="fiber" type="number">
+                  <input id="fiber" type="number" class="form-control">
                 </div>
               </div>
               <div class="form-group">
                 <label for="moisture" class="col-sm-10 control-label">Moisture Percentage</label>
                 <div class="col-sm-2">  
-                  <input id="moisture" type="number">
+                  <input id="moisture" type="number" class="form-control">
                 </div>
               </div>
               <div class="form-group">
                 <label for="ash" class="col-sm-10 control-label">Maximum Ash Percentage</label>
                 <div class="col-sm-2">
-                  <input id="ash" type="number">
+                  <input id="ash" type="number" class="form-control">
                 </div>
               </div>
               <div class="form-group">
@@ -102,7 +102,13 @@
      
     <script>
       $("#calculate").click(function(){
-        $("#result").html("");
+        $("#results-title").html("");
+        $("#pro-term").html("");
+        $("#pro-def").html("");
+        $("#fat-term").html("");
+        $("#fat-def").html("");
+        $("#carb-term").html("");
+        $("#carb-def").html("");
         var protein = parseFloat($("#protein").val());
         var fat = parseFloat($("#fat").val());
         var fiber = parseFloat($("#fiber").val());
@@ -123,8 +129,8 @@
         $("#pro-def").append((proteinPercent*100).toFixed(2)+"%");
         $("#fat-term").append("Fat");
         $("#fat-def").append((fatPercent*100).toFixed(2)+"%");
-        $("#pro-carb").append("Carbohydrates");
-        $("#result").append("(carbPercent*100).toFixed(2)+"%");
+        $("#carb-term").append("Carbohydrates");
+        $("#carb-def").append((carbPercent*100).toFixed(2)+"%");
       });
     </script>
 
