@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cat Food Analysis</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+    <div class="container>
+      <h1>Cat Food Analysis</h1>
+      <p>Enter the amounts listed for the cat food's Guaranteed Analysis:</p>
+      <input id="protein" type="number" placeholder="Minimum Crude Protein Percentage">
+      <input id="fat" type="number" placeholder="Minimum Crude Fat Percentage">
+      <input id="fiber" type="number" placeholder="Maximum Crude Fiber Percentage">
+      <input id="moisture" type="number" placeholder="Moisture Percentage">
+      <input id="ash" type="number" placeholder="Maximum Ash Percentage">
+      <button type="button" id="calculate">Calculate</button>
+      <div id="result"></div>
+    </div>  
+     
+    <script>
+      $("#calculate").click(function(){
+        $("#result").html("");
+        var protein = parseFloat($("#protein").val());
+        var fat = parseFloat($("#fat").val());
+        var fiber = parseFloat($("#fiber").val());
+        var moisture = parseFloat($("#moisture").val());
+        var ash = parseFloat($("#ash").val());
+        var carbContent = 100-protein-fat-fiber-moisture-ash;
+        var dryMatter = 100-moisture;
+        var dryMatterBasis = carbContent/dryMatter;
+        var calsProtein = 3.5 * protein;
+        var calsFat = 8.5 * fat;
+        var calsCarb = 3.5 * carbContent;
+        var totalCals = calsProtein + calsFat + calsCarb;
+        var proteinPercent = calsProtein/totalCals;
+        var fatPercent = calsFat/totalCals;
+        var carbPercent = calsCarb/totalCals;
+        $("#result").append("<h3>Results</h3>")
+        $("#result").append("<p>"+(proteinPercent*100).toFixed(2)+"% protein</p>");
+        $("#result").append("<p>"+(fatPercent*100).toFixed(2)+"% fat</p>");
+        $("#result").append("<p>"+(carbPercent*100).toFixed(2)+"% carbohydrates</p>");
+      });
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  </body>
+</html>
