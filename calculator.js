@@ -1,4 +1,5 @@
 function FoodCalc($scope) { 
+  $scope.authorized = false;
   $scope.calcNutrition = function () {
     $scope.carbContent = 100-$scope.minCrudeProtein-$scope.minCrudeFat-$scope.maxCrudeFiber-$scope.moisture-$scope.maxAsh;
     $scope.calsProtein = 3.5 * $scope.minCrudeProtein;
@@ -16,6 +17,7 @@ function FoodCalc($scope) {
     $scope.minCrudeFat = "";
     $scope.maxCrudeFiber = "";
     $scope.moisture = "";
-    $scope.maxAsh = "";   
+    $scope.maxAsh = ""; 
+    $scope.authorized = true;
   };
 }
