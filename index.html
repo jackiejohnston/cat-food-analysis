@@ -16,18 +16,51 @@
     <![endif]-->
   </head>
   <body>
+    <div class="site-wrapper">
 
-    <div class="container>
-      <h1>Cat Food Analysis</h1>
-      <p>Enter the amounts listed for the cat food's Guaranteed Analysis:</p>
-      <input id="protein" type="number" placeholder="Minimum Crude Protein Percentage">
-      <input id="fat" type="number" placeholder="Minimum Crude Fat Percentage">
-      <input id="fiber" type="number" placeholder="Maximum Crude Fiber Percentage">
-      <input id="moisture" type="number" placeholder="Moisture Percentage">
-      <input id="ash" type="number" placeholder="Maximum Ash Percentage">
-      <button type="button" id="calculate">Calculate</button>
-      <div id="result"></div>
-    </div>  
+      <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+
+          <div class="masthead clearfix">
+            <div class="inner">
+              <h3 class="masthead-brand">Cat Food Analysis</h3>
+              <nav>
+                <ul class="nav masthead-nav">
+                  <li><a href="http://www.catinfo.org/">CatInfo.org</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+
+          <div class="inner cover">
+            <h1 class="cover-heading">Cat Food Analysis</h1>
+            <p class="lead">Figure out how much protein, fat and carbs are in your kitty's food by entering the percentages found on the package's Guaranteed Analysis:</p>
+              <div>
+                <input id="protein" type="number" placeholder="Minimum Crude Protein Percentage">
+                <input id="fat" type="number" placeholder="Minimum Crude Fat Percentage">
+                <input id="fiber" type="number" placeholder="Maximum Crude Fiber Percentage">
+                <input id="moisture" type="number" placeholder="Moisture Percentage">
+                <input id="ash" type="number" placeholder="Maximum Ash Percentage">
+                <button type="button" id="calculate" class="btn btn-lg btn-default">Calculate</button>
+                <div id="result"></div>
+              </div>
+          </div>
+
+          <div class="mastfoot">
+            <div class="inner">
+              <p>Created with <span class="glyphicon glyphicon-heart" aria-hidden="true"></span> by <a href="https://jackie.io">Jackie Johnston</a>.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>  
      
     <script>
       $("#calculate").click(function(){
@@ -54,7 +87,29 @@
       });
     </script>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script>
+      /*!
+       * IE10 viewport hack for Surface/desktop Windows 8 bug
+       * Copyright 2014 Twitter, Inc.
+       * Licensed under the Creative Commons Attribution 3.0 Unported License. For
+       * details, see http://creativecommons.org/licenses/by/3.0/.
+       */
+      
+      // See the Getting Started docs for more information:
+      // http://getbootstrap.com/getting-started/#support-ie10-width
+      
+      (function () {
+        'use strict';
+        if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+          var msViewportStyle = document.createElement('style')
+          msViewportStyle.appendChild(
+            document.createTextNode(
+              '@-ms-viewport{width:auto!important}'
+            )
+          )
+          document.querySelector('head').appendChild(msViewportStyle)
+        }
+      })();
+    </script>
   </body>
 </html>
