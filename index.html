@@ -25,13 +25,13 @@
           <h1 class="text-center main">Cat Food Analysis</h1>
           <p class="lead">Figure out how much protein, fat and carbs are in your kitty's food by entering the percentages found on the package's Guaranteed Analysis:</p>
           <div class="row" ng-hide="authorized">
-            <form  role="form" ng-submit="calcNutrition()">
+            <form name="gaForm" role="form" ng-submit="calcNutrition()">
 
               <div class="form-group">
                 <label for="protein" class="col-sm-7 control-label">Minimum Crude Protein</label>
                 <div class="col-sm-5">
                   <div class="input-group">
-                    <input id="protein" class="form-control" ng-model="minCrudeProtein">
+                    <input id="protein" type="number" step="any" min="0" max="100" class="form-control" ng-model="minCrudeProtein" required>
                     <div class="input-group-addon">%</div>
                   </div>
                 </div>
@@ -41,7 +41,7 @@
                 <label for="fat" class="col-sm-7 control-label">Minimum Crude Fat</label>
                 <div class="col-sm-5">
                   <div class="input-group">
-                    <input id="fat" class="form-control" ng-model="minCrudeFat">
+                    <input id="fat" type="number" step="any" min="0" max="100" class="form-control" ng-model="minCrudeFat" required>
                     <div class="input-group-addon">%</div>
                   </div>
                 </div>
@@ -51,7 +51,7 @@
                 <label for="fiber" class="col-sm-7 control-label">Maximum Crude Fiber</label>
                 <div class="col-sm-5">
                   <div class="input-group">
-                    <input id="fiber" class="form-control" ng-model="maxCrudeFiber">
+                    <input id="fiber" type="number" step="any" min="0" max="100" class="form-control" ng-model="maxCrudeFiber" required>
                     <div class="input-group-addon">%</div>
                   </div>
                 </div>
@@ -61,7 +61,7 @@
                 <label for="moisture" class="col-sm-7 control-label">Moisture</label>
                 <div class="col-sm-5">
                   <div class="input-group">    
-                    <input id="moisture" class="form-control" ng-model="moisture">
+                    <input id="moisture" type="number" step="any" min="0" max="100" class="form-control" ng-model="moisture" required>
                     <div class="input-group-addon">%</div>
                   </div>
                 </div>
@@ -71,7 +71,7 @@
                 <label for="ash" class="col-sm-7 control-label">Maximum Ash</label>
                 <div class="col-sm-5">
                   <div class="input-group">
-                    <input id="ash" class="form-control" ng-model="maxAsh">
+                    <input id="ash" type="number" step="any" min="0" max="100" class="form-control" ng-model="maxAsh" required>
                     <div class="input-group-addon">%</div>
                   </div>
                 </div>
@@ -120,6 +120,7 @@
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>  
 
+    <script src="validator.js"></script>
     <script type="text/javascript">
       /*!
        * IE10 viewport hack for Surface/desktop Windows 8 bug

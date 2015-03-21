@@ -1,6 +1,5 @@
-var foodCalc = angular.module('foodCalc', []);
-
-foodCalc.controller('calcCtrl', ['$scope', function ($scope) {
+angular.module('foodCalc', [])
+.controller('calcCtrl', ['$scope', function($scope) {
 
   $scope.authorized = false;
 
@@ -28,5 +27,5 @@ foodCalc.controller('calcCtrl', ['$scope', function ($scope) {
   $scope.flipSwitch = function () {
     $scope.authorized = false;
   };
-  
+
 }]);
