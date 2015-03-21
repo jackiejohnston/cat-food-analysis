@@ -3,6 +3,7 @@ var foodCalc = angular.module('foodCalc', []);
 foodCalc.controller('calcCtrl', ['$scope', function ($scope) {
 
   $scope.authorized = false;
+
   $scope.calcNutrition = function () {
     $scope.carbContent = 100-$scope.minCrudeProtein-$scope.minCrudeFat-$scope.maxCrudeFiber-$scope.moisture-$scope.maxAsh;
     $scope.calsProtein = 3.5 * $scope.minCrudeProtein;
@@ -24,4 +25,8 @@ foodCalc.controller('calcCtrl', ['$scope', function ($scope) {
     $scope.authorized = true;
   };
 
+  $scope.flipSwitch = function () {
+    $scope.authorized = false;
+  };
+  
 }]);
