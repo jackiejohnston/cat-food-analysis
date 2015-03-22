@@ -12,10 +12,6 @@ angular.module('foodCalc', [])
     $scope.proteinPercent = (($scope.calsProtein/$scope.totalCals)*100).toFixed(2) + "%";
     $scope.fatPercent = (($scope.calsFat/$scope.totalCals)*100).toFixed(2) + "%";
     $scope.carbPercent = (($scope.calsCarb/$scope.totalCals)*100).toFixed(2) + "%";
-    $scope.resultsTitle = "Nutritional Analysis";
-    $scope.proteinTitle = "Protein";
-    $scope.fatTitle = "Fat";
-    $scope.carbTitle = "Carbohydrates";
     $scope.minCrudeProtein = "";
     $scope.minCrudeFat = "";
     $scope.maxCrudeFiber = "";

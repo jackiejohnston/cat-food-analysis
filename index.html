@@ -22,6 +22,7 @@
     <main class="container">
       <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-5">
+          <img class="hidden-sm hidden-md hidden-lg img-responsive" src="cgato-negro-737x494.jpg">
           <h1 class="text-center main">Cat Food Analysis</h1>
           <p class="lead">Figure out how much protein, fat and carbs are in your kitty's food by entering the percentages found on the package's Guaranteed Analysis:</p>
           <div class="row" ng-hide="authorized">
@@ -89,14 +90,14 @@
           </div><!-- row -->
         
           <div ng-show="authorized">
-            <h3 class="text-center results">{{ resultsTitle }}</h3>
+            <h3 class="text-center results">Nutritional Analysis</h3>
             <dl class="dl-horizontal">
               <dt>{{ proteinPercent }}</dt>
-              <dd>{{ proteinTitle }}</dd>
+              <dd>Protein</dd>
               <dt>{{ fatPercent }}</dt>
-              <dd>{{ fatTitle }}</dd>
+              <dd>Fat</dd>
               <dt>{{ carbPercent }}</dt>
-              <dd>{{ carbTitle }}</dd>
+              <dd>Carbohydrates</dd>
             </dl>
             <div class="text-center">
               <button class="btn btn-default" ng-click="flipSwitch()">Make Another Calculation</button>
@@ -116,11 +117,6 @@
     </footer><!-- container -->
 
 
-
-
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>  
-
-    <script src="validator.js"></script>
     <script type="text/javascript">
       /*!
        * IE10 viewport hack for Surface/desktop Windows 8 bug
