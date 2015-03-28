@@ -24,7 +24,7 @@
         <div class="col-xs-12 col-sm-6 col-md-5">
           <img class="hidden-sm hidden-md hidden-lg img-responsive" src="cgato-negro-737x494.jpg">
           <h1 class="text-center main">Cat Food Analysis</h1>
-          <p class="lead">Figure out how much protein, fat and carbs are in your kitty's food by entering the percentages found on the package's Guaranteed Analysis:</p>
+          <p class="lead">Figure out how much protein, fat and carbs are in your kitty&rsquo;s food by entering the percentages found on the package's Guaranteed Analysis:</p>
           <div class="row" ng-hide="authorized">
             <form name="gaForm" role="form" ng-submit="calcNutrition()">
 
@@ -59,7 +59,7 @@
               </div>
 
               <div class="form-group">
-                <label for="moisture" class="col-sm-7 control-label">Moisture</label>
+                <label for="moisture" class="col-sm-7 control-label">Maximum Moisture</label>
                 <div class="col-sm-5">
                   <div class="input-group">    
                     <input id="moisture" type="number" step="any" min="0" max="100" class="form-control" ng-model="moisture" required>
@@ -69,7 +69,7 @@
               </div>
 
               <div class="form-group">
-                <label for="ash" class="col-sm-7 control-label">Maximum Ash</label>
+                <label for="ash" class="col-sm-7 control-label">Maximum Ash<sup>*</sup></label>
                 <div class="col-sm-5">
                   <div class="input-group">
                     <input id="ash" type="number" step="any" min="0" max="100" class="form-control" ng-model="maxAsh" required>
@@ -111,7 +111,8 @@
     <footer class="container-fluid">
       <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
-          <p>Created with <span class="glyphicon glyphicon-heart" aria-hidden="true"></span> by <a href="https://jackie.io">Jackie Johnston</a>. For more information on feline nutrition, go to <a href="http://www.catinfo.org/">CatInfo.org</a>.</p>
+          <p class="disclaimer">*Please note, cat food manufacturers are no longer required to list the ash content of their food. If you have to guess, know that ash content in canned food is usually under 2%. Between this omission and manufacturers being allowed to use minimums and maximums, instead of actual amounts, these calculations are, by their nature, inaccurate. To get more accurate numbers, you need to call the manufacturer and ask for the &lsquo;typical nutrient analysis&rsquo; (TNA) of the food. The Cat Food Composition chart at <a href="http://www.catinfo.org/?link=cannedfoods">CatInfo.org</a> is an excellent resource since it was compiled after making many phone calls to get this information for the foods listed.</p>
+          <p>Created with <span class="glyphicon glyphicon-heart" aria-hidden="true"></span> by <a href="https://jackie.io">Jackie Johnston</a>.</p>
         </div><!-- col-md-12 -->
       </div><!-- row -->
     </footer><!-- container -->
